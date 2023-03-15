@@ -10,7 +10,7 @@ function solution(s){
     for( let i of s){
         if ( i === 'P'){
             count_p++;
-            
+
         }else if ( i === 'Y'){
             count_y++;
         }
@@ -24,3 +24,19 @@ function solution(s){
     }
 
 }
+
+//[2] 다른사람 풀이.
+function solution(s) {
+    return [...s.toUpperCase()].reduce((acc, cur) => {
+      if (cur === 'P') {
+        return acc + 1;
+      } else if (cur === 'Y') {
+        return acc - 1;
+      }
+      console.log(acc);
+      return acc;
+    }, 0)
+      ? false
+      : true;
+  }
+  
