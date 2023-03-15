@@ -8,10 +8,10 @@ This is the repository of my Coding Test record : Programmers / Backjoon
 
 
 - [ ] LV.01
-    - [ ] 01 : 약수의 합 
-    - [ ] 02 : x만큼 간격이 있는 n개의 숫자
-    - [ ] 03 : 👁️ 자연수 뒤집어 배열로 만들기
-    - [ ] 04 : 문자열 내 p와 y의 개수
+    - [x] 01 : 약수의 합 
+    - [x] 02 : x만큼 간격이 있는 n개의 숫자
+    - [x] 03 : 👁️ 자연수 뒤집어 배열로 만들기
+    - [x] 04 : 문자열 내 p와 y의 개수
 
 ## Backjoon
 
