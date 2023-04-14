@@ -11,3 +11,23 @@ function solution(n) {
     answer = Number(n); // 숫자로 출력해야 하므로 Number()로 변환.
     return answer;
 }
+
+
+//[2] 숫자로 푸는 것이 문자로 푸는 것 보다 빠름 ** 
+function solution(n){
+    var answer = [];
+
+    do{
+        answer.push(n%10); // 맨 뒷 자리가 answer 배열로 push
+        n = Math.floor(n/10); // 맨 뒷 자리가 하나씩 사라짐 
+        //11837 --> 2
+        //1183 --> 7
+        //118 --> 3
+        //11 --> 8
+        //1 --> 1
+        //0 --> 1
+    }while(n>0)
+
+    return answer.sort((a,b) => b-a).join('')*1;
+
+}
