@@ -18,4 +18,5 @@ This is the repository of my Coding Test record : Programmers / Backjoon
 
 python / JAVA로 백준 문제를 풉니다. 
 
-    - [x] 10869 : 사칙연산.py
+- [ ] Python
+    - [x] 10869 : 사칙연산
