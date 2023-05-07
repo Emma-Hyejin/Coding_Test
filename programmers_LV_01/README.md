@@ -1,6 +1,6 @@
 # Programmers LV01 
 
-### 문자열 다루기 
+## [문자열 다루기](https://github.com/Emma-Hyejin/Coding_Test/blob/main/programmers_LV_01/hideNum.js) 
 주어진 문자열이 **정규 표현식**을 만족하는지 판별하고 그 여부를 **true/false**로 반환
 
 ```javaScript
