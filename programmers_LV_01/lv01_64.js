@@ -22,3 +22,32 @@ function solution(participant, completion) {
     
     return answer;
 }
+
+
+//2차 시도 통과 
+function solution(participant, completion) {
+    //동명이인이 있을 수 있음 주의 , 완주하지 못한 선수의 이름을 "" 으로 리턴 : 단 한명 
+    let answer = '';
+    const table = {};
+    //완주한 사람의 이름을 해당 객체의 키로 
+    participant.forEach((i) => {
+        table[i] = table[i] ? table[i] + 1 : 1;
+        //console.log(table);
+    })
+
+    completion.forEach((c) => {
+        table[c] = table[c] ? table[c] -1 : table[c];
+        //console.log(table);
+    })
+    
+    
+    for( let i in table){
+        if(table[i] === 1){
+            answer = i;
+            //console.log(answer);
+            break;
+        }
+    }
+ 
+    return answer;
+}
