@@ -1,4 +1,6 @@
 //전화번호 목록 - HASH
+//HASH TABLE의 MAP을 이용해서 풀어보기 ***
+//https://velog.io/@ahsy92/JavaScript-Hash%EC%99%80-Map
 //input - ["119", "97674223", "1195524421"]  return false;
 
 function solution(phone_book){
