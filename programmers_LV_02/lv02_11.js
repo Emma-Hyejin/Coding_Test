@@ -44,4 +44,52 @@ function solution(n, words) { //사람 수, 배열
 
 
     return answer;
-}
+};
+
+
+//2차 시도 Hash 맵
+function solution(n, words) {
+    //Hash map?
+        let answer = [];
+        const table = {}; 
+        
+        for( let i = 0 ; i < words.length; i++){
+            const current = words[i];
+            const next = words[i+1];
+    
+            table[current] = table[current] ? table[current] + 1 : 1;
+            //table[next] = (next && current[current.length-1] !== next[0]) ? 0 : 1;  
+        }
+    
+        
+        for( let i = 0 ; i < words.length-1; i++){
+            const current = words[i];
+            const next = words[i+1];
+            
+            table[next] = (next && current[current.length-1] !== next[0]) ? table[next] - 1 : table[next];  
+        }
+    
+        
+        console.log(table);
+        for( let i in table){
+            if(table[i] === 2){
+                const index = words.lastIndexOf(i) + 1;
+                const people = Math.floor(index / n);
+                const round = Math.floor(index / n);
+                return [people, round]
+            }
+            if(table[i] == 0){
+                const index = words.lastIndexOf(i) + 1;
+                console.log(index);
+                const people = Math.floor(index % n);
+                const round = Math.ceil(index / n);
+                return [people, round];
+            }
+        }
+        
+        //모두 무사히 통과한 경우, 
+        answer = [0, 0]    
+        //console.log(table);
+    
+        return answer;
+    }
