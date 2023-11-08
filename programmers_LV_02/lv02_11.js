@@ -74,6 +74,9 @@ function solution(n, words) {
         for( let i in table){
             if(table[i] === 2){
                 const index = words.lastIndexOf(i) + 1;
+                //딱 떨어질 경우 
+                if(index % n === 0) return [(index / n), (index / n)];
+
                 const people = Math.floor(index / n);
                 const round = Math.floor(index / n);
                 return [people, round]
