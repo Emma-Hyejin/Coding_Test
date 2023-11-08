@@ -95,4 +95,60 @@ function solution(n, words) {
         //console.log(table);
     
         return answer;
-    }
+    };
+
+
+
+    //3차 시도 - 성공 
+    function solution(n, words) {
+        let answer = [];
+        for( let i = 1 ; i < words.length; i ++){
+            const current = words[i];
+            const prev = words[i-1];
+            
+            //중복 요소  
+            //words[i]가 현재 위치에 있지 않은 경우 
+            if(words.indexOf(current) !== i){
+                //ex. i = 8;
+                //console.log(i)
+                const people = i % n + 1 ;  //소수점 버리기 1
+                const round = Math.floor(i / n) + 1 ; //소수점 반올림 2.5
+                return [people, round]
+            }
+            
+            //규칙에 맞지 않는 경우 : 앞 뒤 다른 경우 
+            if(prev[prev.length - 1 ] !== current[0]){
+                const people = i % n + 1 ;
+                const round = Math.floor( i / n ) + 1 ;
+                return [people, round];
+            }
+        }
+        
+        //조건문을 돌 동안 모두 통과하면 
+        return [0, 0]
+    
+    };
+
+    //다른 사람 풀이 
+    function solution(n, words) {
+        let answer = [0, 0];
+      
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          let p = i % n + 1;
+          let turn = Math.ceil((i + 1)/n);
+      
+          if (i > 0) {
+            // 이전 단어 마지막 글자
+            let last = words[i - 1].split("").pop();
+      
+            // 중복이거나 틀린 경우
+            if (i > words.indexOf(word) || words[i][0] !== last) {
+              answer = [p, turn];
+              break;
+            }
+          }
+        }
+      
+        return answer;
+      }
